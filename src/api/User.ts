@@ -9,3 +9,11 @@ export const signUpAPI = async (body: string) => {
     },
   })
 }
+
+export const signInAPI = async (body: string) => {
+  return await axios.post(`${BASE_API}/auth/signin`, body, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+}

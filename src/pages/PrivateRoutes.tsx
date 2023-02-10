@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
 
 function PrivateRoutes() {
-  const isLoggedIn = false
+  const isLoggedIn = localStorage.getItem("access_token")
   const navigate = useNavigate()
 
   useEffect(() => {
