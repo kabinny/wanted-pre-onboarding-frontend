@@ -1,8 +1,13 @@
+import Header from "../components/Header/Header"
+import Container from "../components/Layout/Container"
+import SignUp from "../components/SignUp/SignUp"
+
 function SignUpPage() {
   return (
-    <>
-      <h2>SignUpPage</h2>
-    </>
+    <Container>
+      <Header />
+      <SignUp />
+    </Container>
   )
 }
 
