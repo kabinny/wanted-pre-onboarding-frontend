@@ -4,6 +4,7 @@ import TodoList from "../components/Todo/TodoList"
 import { todoItem } from "../types/todoType"
 import { useEffect, useState } from "react"
 import { getTodosAPI } from "../api/Todo"
+import Header from "../components/Header/Header"
 
 function TodoPage() {
   const [todoList, setTodoList] = useState<todoItem[]>([])
@@ -24,6 +25,7 @@ function TodoPage() {
 
   return (
     <Container>
+      <Header />
       <h3>Todo List</h3>
       <TodoForm getTodoList={getTodoList} />
       <TodoList todoList={todoList} getTodoList={getTodoList} />
