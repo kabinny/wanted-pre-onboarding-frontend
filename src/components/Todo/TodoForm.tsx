@@ -19,7 +19,7 @@ function TodoForm({ getTodoList }: Props) {
 
     if (isValid) {
       try {
-        createTodoAPI(JSON.stringify(value)).then((res) => {
+        createTodoAPI(value).then((res) => {
           getTodoList()
           setValue({ todo: "" })
           if (inputRef.current) {

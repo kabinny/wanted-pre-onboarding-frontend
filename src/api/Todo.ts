@@ -4,7 +4,9 @@ const token = localStorage.getItem("access_token")
 
 const BASE_API = "https://pre-onboarding-selection-task.shop"
 
-export const createTodoAPI = async (body: string) => {
+export const createTodoAPI = async ({ todo }: { todo: string }) => {
+  const body = JSON.stringify({ todo })
+
   return await axios.post(`${BASE_API}/todos`, body, {
     headers: {
       Authorization: `Bearer ${token}`,

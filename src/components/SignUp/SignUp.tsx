@@ -58,7 +58,7 @@ function SignUp() {
 
     if (isValid) {
       try {
-        signUpAPI(JSON.stringify(values)).then(() => {
+        signUpAPI(values).then(() => {
           navigate("/signin")
         })
       } catch (e) {

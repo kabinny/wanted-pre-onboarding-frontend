@@ -59,7 +59,7 @@ function SignIn() {
 
     if (isValid) {
       try {
-        signInAPI(JSON.stringify(values)).then((res) => {
+        signInAPI(values).then((res) => {
           localStorage.setItem("access_token", res.data.access_token)
           navigate("/todo")
         })
