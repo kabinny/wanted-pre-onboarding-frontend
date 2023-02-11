@@ -9,6 +9,7 @@ function PrivateRoutes() {
     if (!isLoggedIn) {
       navigate("/signin")
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (isLoggedIn) {
