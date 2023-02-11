@@ -20,3 +20,25 @@ export const getTodosAPI = async () => {
     },
   })
 }
+
+export const updateTodoAPI = async ({
+  id,
+  todo,
+  isCompleted,
+}: {
+  id: number
+  todo: string
+  isCompleted: boolean
+}) => {
+  const body = JSON.stringify({
+    todo,
+    isCompleted,
+  })
+
+  return await axios.put(`${BASE_API}/todos/${id}`, body, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  })
+}

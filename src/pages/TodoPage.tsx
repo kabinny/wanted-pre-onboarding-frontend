@@ -26,7 +26,7 @@ function TodoPage() {
     <Container>
       <h3>Todo List</h3>
       <TodoForm getTodoList={getTodoList} />
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} getTodoList={getTodoList} />
     </Container>
   )
 }
