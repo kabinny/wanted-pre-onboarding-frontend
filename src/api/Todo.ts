@@ -44,3 +44,11 @@ export const updateTodoAPI = async ({
     },
   })
 }
+
+export const deleteTodoAPI = async ({ id }: { id: number }) => {
+  return await axios.delete(`${BASE_API}/todos/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}

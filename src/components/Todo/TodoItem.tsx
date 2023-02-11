@@ -1,4 +1,4 @@
-import { updateTodoAPI } from "../../api/Todo"
+import { deleteTodoAPI, updateTodoAPI } from "../../api/Todo"
 import { todoItem } from "../../types/todoType"
 
 interface Props extends todoItem {
@@ -21,6 +21,16 @@ function TodoItem({ id, todo, isCompleted, userId, getTodoList }: Props) {
     }
   }
 
+  const deleteTodo = () => {
+    try {
+      deleteTodoAPI({ id }).then((res) => {
+        getTodoList()
+      })
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
   return (
     <li>
       <label>
@@ -30,7 +40,7 @@ function TodoItem({ id, todo, isCompleted, userId, getTodoList }: Props) {
       <button type="button" data-testid="modify-button">
         수정
       </button>
-      <button type="button" data-testid="delete-button">
+      <button type="button" onClick={deleteTodo} data-testid="delete-button">
         삭제
       </button>
     </li>
