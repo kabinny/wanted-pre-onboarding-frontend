@@ -34,14 +34,19 @@ function TodoForm({ getTodoList }: Props) {
 
   return (
     <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        onChange={onChange}
-        value={value.todo}
-        ref={inputRef}
-        data-testid="new-todo-input"
-      />
-      <button data-testid="new-todo-add-button">추가</button>
+      <div className="row">
+        <input
+          type="text"
+          className="col"
+          onChange={onChange}
+          value={value.todo}
+          ref={inputRef}
+          data-testid="new-todo-input"
+        />
+        <button type="submit" className="col-2" data-testid="new-todo-add-button">
+          추가
+        </button>
+      </div>
     </form>
   )
 }

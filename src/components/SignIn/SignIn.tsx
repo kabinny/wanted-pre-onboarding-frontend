@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { signInAPI } from "../../api/User"
 
 interface values {
@@ -84,7 +84,7 @@ function SignIn() {
           data-testid="email-input"
           required
         />
-        <span>{!validEmail && values.email.length > 0 && errors.email}</span>
+        <span className="text-error">{!validEmail && values.email.length > 0 && errors.email}</span>
         <br />
         {/* 비밀번호 */}
         <label htmlFor="signinPasswordInput">비밀번호</label>
@@ -98,13 +98,19 @@ function SignIn() {
           data-testid="password-input"
           required
         />
-        <span>{!validPassword && values.password.length > 0 && errors.password}</span>
+        <span className="text-error">
+          {!validPassword && values.password.length > 0 && errors.password}
+        </span>
         <br />
         {/* 제출 버튼 */}
         <button type="submit" disabled={!(validEmail && validPassword)} data-testid="signin-button">
           로그인
         </button>
       </form>
+
+      {/* 회원가입 페이지로 */}
+      <hr />
+      <Link to="/signup">회원가입 하기</Link>
     </div>
   )
 }

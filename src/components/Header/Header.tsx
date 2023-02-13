@@ -10,14 +10,18 @@ function Header() {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
-      <h2>Todo App</h2>
-      {token && (
-        <button type="button" onClick={signOut}>
-          로그아웃
-        </button>
-      )}
-    </div>
+    <header>
+      <div className="nav">
+        <h1 className="nav-left">Todo App</h1>
+        {token && (
+          <div className="nav-right">
+            <button className="button outline" type="button" onClick={signOut}>
+              로그아웃
+            </button>
+          </div>
+        )}
+      </div>
+    </header>
   )
 }
 

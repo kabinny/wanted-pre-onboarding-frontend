@@ -42,19 +42,27 @@ function TodoEditForm({
 
   return (
     <form style={{ display: "inline-block" }} onSubmit={onSubmit}>
-      <input
-        type="text"
-        value={text}
-        ref={inputModifyRef}
-        onChange={onChange}
-        data-testid="modify-input"
-      />
-      <button type="submit" data-testid="submit-button">
-        제출
-      </button>
-      <button type="button" onClick={() => setIsModifying(false)} data-testid="cancel-button">
-        취소
-      </button>
+      <div>
+        <input
+          type="text"
+          value={text}
+          ref={inputModifyRef}
+          onChange={onChange}
+          data-testid="modify-input"
+          style={{ display: "inline-block", width: "auto", marginRight: "1rem" }}
+        />
+        <button type="submit" className="button" data-testid="submit-button">
+          제출
+        </button>
+        <button
+          type="button"
+          className="button"
+          onClick={() => setIsModifying(false)}
+          data-testid="cancel-button"
+        >
+          취소
+        </button>
+      </div>
     </form>
   )
 }

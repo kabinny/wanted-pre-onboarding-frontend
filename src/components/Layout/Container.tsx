@@ -5,18 +5,7 @@ interface Props {
 }
 
 function Container({ children }: Props) {
-  return (
-    <div
-      style={{
-        marginLeft: "auto",
-        marginRight: "auto",
-        width: "100%",
-        maxWidth: "640px",
-      }}
-    >
-      {children}
-    </div>
-  )
+  return <div className="container">{children}</div>
 }
 
 export default Container

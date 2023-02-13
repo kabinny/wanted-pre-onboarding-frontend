@@ -37,10 +37,10 @@ function TodoItem({ id, todo, isCompleted, userId, getTodoList }: Props) {
   }
 
   return (
-    <li>
+    <li style={{ marginBottom: "1rem" }}>
       <label>
         <input type="checkbox" onChange={onCheck} defaultChecked={isCompleted} />
-        {!isModifying && <span>{todo}</span>}
+        {!isModifying && <span style={{ padding: "0 1rem" }}>{todo}</span>}
       </label>
 
       {/* 수정 모드 */}
@@ -55,10 +55,12 @@ function TodoItem({ id, todo, isCompleted, userId, getTodoList }: Props) {
         />
       )}
 
+      {/* 기본 모드 */}
       {!isModifying && (
         <>
           <button
             type="button"
+            className="button dark outline"
             onClick={() => {
               setIsModifying(true)
               setTimeout(() => {
@@ -69,7 +71,12 @@ function TodoItem({ id, todo, isCompleted, userId, getTodoList }: Props) {
           >
             수정
           </button>
-          <button type="button" onClick={deleteTodo} data-testid="delete-button">
+          <button
+            type="button"
+            className="button error"
+            onClick={deleteTodo}
+            data-testid="delete-button"
+          >
             삭제
           </button>
         </>
