@@ -1,10 +1,9 @@
 import axios from "axios"
 
-const token = localStorage.getItem("access_token")
-
 const BASE_API = "https://pre-onboarding-selection-task.shop"
 
 export const createTodoAPI = async ({ todo }: { todo: string }) => {
+  const token = localStorage.getItem("access_token")
   const body = JSON.stringify({ todo })
 
   return await axios.post(`${BASE_API}/todos`, body, {
@@ -16,6 +15,8 @@ export const createTodoAPI = async ({ todo }: { todo: string }) => {
 }
 
 export const getTodosAPI = async () => {
+  const token = localStorage.getItem("access_token")
+
   return await axios.get(`${BASE_API}/todos`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -32,6 +33,7 @@ export const updateTodoAPI = async ({
   todo: string
   isCompleted: boolean
 }) => {
+  const token = localStorage.getItem("access_token")
   const body = JSON.stringify({
     todo,
     isCompleted,
@@ -46,6 +48,8 @@ export const updateTodoAPI = async ({
 }
 
 export const deleteTodoAPI = async ({ id }: { id: number }) => {
+  const token = localStorage.getItem("access_token")
+
   return await axios.delete(`${BASE_API}/todos/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
